@@ -17,7 +17,12 @@ app.get('/mean', (req, res, next) => {
   if (!req.query.nums) {
     throw new ExpressError('Query key of nums are required!', 400);
   }
+
+  // splits the comma seperated nums query into an array
+  // at this point, the nums are a string
   let numsToStr = req.query.nums.split(',');
+
+  //converts the string to nums
   let nums = convertAndValidate(numsToStr);
 
   if (nums instanceof Error) {
