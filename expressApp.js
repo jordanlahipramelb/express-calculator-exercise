@@ -25,6 +25,7 @@ app.get('/mean', (req, res, next) => {
   //converts the string to nums
   let nums = convertAndValidate(numsToStr);
 
+  // if nums has Error frin convertAndValidate method
   if (nums instanceof Error) {
     throw new ExpressError(nums.message);
   }
