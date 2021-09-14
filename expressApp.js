@@ -83,7 +83,7 @@ app.get('/mode', (req, res, next) => {
 //////////////////////////////////////////////
 // Error Handler
 
-// If no other route matches, respond with a 404
+// 404 handler is no other next matches
 app.use((req, res, next) => {
   const e = new ExpressError('Page Not Found', 404);
   next(e);
